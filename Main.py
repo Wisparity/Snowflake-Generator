@@ -8,41 +8,41 @@ clock = pygame.time.Clock() #set up clock
 
 #set up variables for flake 1 position
 flake1x = 20
-flake1y = -100 #start above the screen
+flake1y = 600 #start above the screen
 
 #set up variables for flake 2 position
 flake2x = 300
-flake2y = -50
+flake2y = 550
 
 flake3x = 255
-flake3y = -75
+flake3y = 675
 
 flake4x = 200
-flake4y = -30
+flake4y = 730
 
 flake5x = 290
-flake5y = -45
+flake5y = 945
 
 flake6x = 195
-flake6y = -60
+flake6y = 860
 
 flake7x = 225
-flake7y = -25
+flake7y = 625
 
 flake8x = 175
-flake8y = -70
+flake8y = 670
 
 flake9x = 240
-flake9y = -15
+flake9y = 515
 
 flake10x = 265
-flake10y = -95
+flake10y = 895
 
-flake5x = 235
-flake5y = -70
+flake11x = 235
+flake11y = 970
 
-flake5x = 200
-flake5y = -70
+flake12x = 200
+flake12y = 790
 
 
 while(1): #omg game lup---------
@@ -51,42 +51,44 @@ while(1): #omg game lup---------
     #physics section----
     
     #move flakes
-    flake1y+=2 #this one moves faster
-    flake2y+=1
-    flake3y+=2
-    flake4y+=1
-    flake5y+=3
-    flake6y+=1
-    flake7y+=2
-    flake8y+=2
-    flake9y+=1
-    flake10y+=1
+    flake1y-=2 #this one moves faster
+    flake2y-=1.55
+    flake3y-=2.43
+    flake4y-=1.27
+    flake5y-=2.85
+    flake6y-=2.35
+    flake7y-=1.72
+    flake8y-=2
+    flake9y-=1.35
+    flake10y-=2.6
+    flake11y-=2.12
+    flake12y-=1.19
  
     #reset flakes to top of screen
-    if flake1y > 500:
-        flake1y = -100
+    if flake1y < 0:
+        flake1y = 500
     if flake2y > 500:
-        flake2y = -50
-    if flake3y > 500:
-        flake3y = -60
-    if flake4y > 500:
-        flake4y = -30
-    if flake5y > 500:
-        flake5y = -70
-    if flake6y > 500:
-        flake6y = -20
-    if flake7y > 500:
-        flake7y = -45
-    if flake8y > 500:
-        flake8y = -85
-    if flake9y > 500:
-        flake9y = -35
-    if flake10y > 500:
-        flake10y = -90
-
-    
-    
-    
+        flake2y = 580
+    if flake3y < 0:
+        flake3y = 675
+    if flake4y < 0:
+        flake4y = 850
+    if flake5y < 0:
+        flake5y = 715
+    if flake6y < 0:
+        flake6y = 920
+    if flake7y < 0:
+        flake7y = 735
+    if flake8y < 0:
+        flake8y = 620
+    if flake9y < 0:
+        flake9y = 875
+    if flake10y < 0:
+        flake10y = 790
+    if flake11y < 0:
+        flake11y = 985
+    if flake12y < 0:
+        flake12y = 750    
     #render section---
     screen.fill((0,0,0))
     
@@ -100,7 +102,8 @@ while(1): #omg game lup---------
     pygame.draw.circle(screen, (255, 255, 255), (flake8x, flake8y), 3)
     pygame.draw.circle(screen, (255, 255, 255), (flake9x, flake9y), 3)
     pygame.draw.circle(screen, (255, 255, 255), (flake10x, flake10y), 3)
-    
+    pygame.draw.circle(screen, (255, 255, 255), (flake11x, flake11y),3)
+    pygame.draw.circle(screen, (255, 255, 255), (flake12x, flake12y),3)
     pygame.display.flip()#this actually puts the pixel on the screen
    
 pygame.quit()
